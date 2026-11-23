@@ -1,0 +1,58 @@
+/* 1. INHERITANCE: Font family and text color flow down from body to all child elements */
+body {
+  font-family: Arial, sans-serif;
+  color: #333333;
+  background-color: #f0f2f5;
+  margin: 0;
+}
+
+/* 2. BOX MODEL: Explicit content size, padding, border, and margin */
+.card {
+  box-sizing: border-box;
+  width: 300px;
+  padding: 24px;
+  border: 2px solid #dcdcdc;
+  margin: 50px auto;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border: 3px solid #0066cc;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+/* 3. CASCADE (Source Order): Both rules have equal specificity (0,0,1). 
+   The second rule wins because it appears later in the stylesheet. */
+h2 {
+  color: #999999;
+  margin: 0 0 8px 0;
+}
+h2 {
+  color: #111111;
+}
+
+/* 4. SPECIFICITY: The class selector (.role) has higher specificity (0,1,0) 
+   than the element selector (p) (0,0,1), overriding the gray color even though p comes later. */
+.role {
+  color: #0066cc;
+  font-weight: bold;
+  margin: 0 0 12px 0;
+}
+p {
+  color: #666666;
+  margin: 0 0 20px 0;
+}
+
+/* 5. BOX MODEL & INHERITANCE OVERRIDE: Form elements don't inherit font-family 
+   by default, so we force inheritance and apply box model spacing. */
+.btn {
+  font-family: inherit;
+  padding: 10px 20px;
+  border: 1px solid #0066cc;
+  background-color: #0066cc;
+  color: #ffffff;
+}
