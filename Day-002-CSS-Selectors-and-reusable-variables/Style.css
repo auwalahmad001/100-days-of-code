@@ -1,0 +1,38 @@
+/* 1. Store your reusable values here */
+:root {
+  --main-color: #2563eb;
+  --card-bg: #ffffff;
+  --page-bg: #f1f5f9;
+  --gap: 16px;
+  --round: 8px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--page-bg);
+  padding: 24px;
+}
+
+/* 2. Reuse the variables across different components */
+.box {
+  background-color: var(--card-bg);
+  padding: var(--gap);
+  border-radius: var(--round);
+  margin-bottom: var(--gap);
+}
+
+.btn {
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: var(--round);
+}
+
+.badge {
+  background-color: var(--main-color);
+  color: white;
+  padding: 4px 10px;
+  border-radius: var(--round);
+  font-size: 14px;
+}
