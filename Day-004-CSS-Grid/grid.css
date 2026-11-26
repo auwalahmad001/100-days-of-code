@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f5f9;
+  color: #0f172a;
+  margin: 0;
+}
+
+/* 1. OUTER DASHBOARD LAYOUT (2 Columns, 2 Rows) */
+.dashboard {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar main";
+  min-height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  background-color: #ffffff;
+  padding: 16px 24px;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #1e293b;
+  padding: 24px 16px;
+}
+
+.sidebar nav {
+  display: grid;
+  gap: 12px;
+}
+
+.sidebar a {
+  color: #f8fafc;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.sidebar a:hover {
+  background-color: #334155;
+}
+
+.main {
+  grid-area: main;
+  padding: 24px;
+  display: grid;
+  gap: 20px;
+  align-content: start;
+}
+
+/* 2. INNER STAT CARDS GRID (Auto-responsive columns) */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.card h3 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.number {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* 3. MOBILE STACKING (Below 700px wide) */
+@media (max-width: 700px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main";
+  }
+
+  .sidebar nav {
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+  }
+}
