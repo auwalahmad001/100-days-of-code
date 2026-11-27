@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: #0f172a;
+  background-color: #f8fafc;
+  line-height: 1.5;
+}
+
+.container {
+  width: 90%;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background-color: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.btn-sm {
+  padding: 8px 14px;
+}
+
+/* =========================================
+   1. MOBILE DEFAULT (< 600px)
+   Everything stacks vertically in 1 column
+   ========================================= */
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 16px 0;
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav a:not(.btn) {
+  text-decoration: none;
+  color: #334155;
+  font-weight: bold;
+}
+
+.hero {
+  background-color: #ffffff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.hero-box {
+  background-color: #e2e8f0;
+  border-radius: 8px;
+  padding: 60px 20px;
+  font-weight: bold;
+  color: #475569;
+}
+
+.features {
+  padding: 40px 0;
+}
+
+.features h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.footer {
+  background-color: #0f172a;
+  color: #cbd5e1;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+/* =========================================
+   2. TABLET VIEWPORT (>= 600px)
+   Horizontal navbar + 2-column feature grid
+   ========================================= */
+@media (min-width: 600px) {
+  .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================
+   3. DESKTOP VIEWPORT (>= 960px)
+   2-column split hero + 3-column feature grid
+   ========================================= */
+@media (min-width: 960px) {
+  .hero {
+    text-align: left;
+    padding: 64px 0;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
