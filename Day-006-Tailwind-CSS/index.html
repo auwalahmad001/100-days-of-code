@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind Mobile-First Landing Page</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans m-0 text-slate-900 bg-slate-50 leading-normal">
+
+  <!-- Header: stacks on mobile, horizontal row at sm (640px+) -->
+  <header class="bg-white border-b border-slate-200 py-4">
+    <div class="w-[90%] max-w-[1040px] mx-auto flex flex-col sm:flex-row sm:justify-between items-center gap-3">
+      <div class="text-xl font-bold">LaunchPad</div>
+      <nav class="flex items-center gap-4">
+        <a href="#features" class="text-slate-700 font-bold hover:text-blue-600">Features</a>
+        <a href="#about" class="text-slate-700 font-bold hover:text-blue-600">About</a>
+        <a href="#start" class="inline-block bg-blue-600 text-white font-bold px-3.5 py-2 rounded-md hover:bg-blue-700">
+          Sign Up
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section: 1 column centered on mobile, 2 columns left-aligned at lg (1024px+) -->
+  <section class="bg-white py-10 lg:py-16 text-center lg:text-left">
+    <div class="w-[90%] max-w-[1040px] mx-auto grid grid-cols-1 lg:grid-cols-2 lg:items-center gap-6">
+      <div>
+        <h1 class="text-3xl lg:text-4xl font-bold mb-4">Build Faster on Every Screen</h1>
+        <p class="text-slate-600 mb-6">
+          Start with a clean mobile layout and scale up smoothly to tablets and desktops.
+        </p>
+        <a href="#start" class="inline-block bg-blue-600 text-white font-bold px-5 py-3 rounded-md hover:bg-blue-700">
+          Get Started
+        </a>
+      </div>
+      <div class="bg-slate-200 rounded-lg py-16 px-5 font-bold text-slate-600 text-center">
+        <p>App Preview</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section: 1 col mobile -> 2 cols sm (640px+) -> 3 cols lg (1024px+) -->
+  <section id="features" class="py-10">
+    <div class="w-[90%] max-w-[1040px] mx-auto">
+      <h2 class="text-2xl font-bold text-center mb-6">Core Benefits</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-white p-5 rounded-lg border border-slate-200">
+          <h3 class="font-bold text-lg mb-2">1. Mobile First</h3>
+          <p class="text-slate-600">Written for small screens first so phones load simple, fast styles.</p>
+        </div>
+        <div class="bg-white p-5 rounded-lg border border-slate-200">
+          <h3 class="font-bold text-lg mb-2">2. Tablet Ready</h3>
+          <p class="text-slate-600">Expands into two columns once the screen reaches tablet width.</p>
+        </div>
+        <div class="bg-white p-5 rounded-lg border border-slate-200">
+          <h3 class="font-bold text-lg mb-2">3. Desktop Scale</h3>
+          <p class="text-slate-600">Unlocks a full three-column layout on desktop screens.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-300 text-center py-5 text-sm">
+    <div class="w-[90%] max-w-[1040px] mx-auto">
+      <p>&copy; 2026 LaunchPad. Built with Tailwind CSS.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
